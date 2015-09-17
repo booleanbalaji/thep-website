@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>particles.js</title>
+  <meta name="description" content="particles.js is a lightweight JavaScript library for creating particles.">
+  <meta name="author" content="Vincent Garreau" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <link rel="stylesheet" media="screen" href="assets/css/style.css">
+  <link rel="stylesheet" media="screen" href="assets/css/main.css">
+
+</head>
+<body>
+
+<!-- count particles -->
+<div class="count-particles">
+  <span class="js-count-particles">--</span> particles
+</div>
+<div id="header">
+
+  <div class="top">
+
+    <!-- Logo -->
+      <div id="logo">
+        <span class="image avatar48"><img src="images/logo.jpg" alt="" /></span>
+        <h1 id="title">The Hindu Education Plus Club</h1>
+        <p>VIT University</p>
+      </div>
+
+    <!-- Nav -->
+      <nav id="nav">
+        <!--
+
+          Prologue's nav expects links in one of two formats:
+
+          1. Hash link (scrolls to a different section within the page)
+
+             <li><a href="#foobar" id="foobar-link" class="icon fa-whatever-icon-you-want skel-layers-ignoreHref"><span class="label">Foobar</span></a></li>
+
+          2. Standard link (sends the user to another page/site)
+
+             <li><a href="http://foobar.tld" id="foobar-link" class="icon fa-whatever-icon-you-want"><span class="label">Foobar</span></a></li>
+
+        -->
+        <ul>
+          <li><a href="index.html#top" id="top-link" class="skel-layers-ignoreHref"><span class="icon fa-home">Intro</span></a></li>
+          <li><a href="index.html#portfolio" id="portfolio-link" class="skel-layers-ignoreHref"><span class="icon fa-th">Portfolio</span></a></li>
+          <li><a href="index.html#about" id="about-link" class="skel-layers-ignoreHref"><span class="icon fa-user">About Us</span></a></li>
+          <li><a href="index.html#contact" id="contact-link" class="skel-layers-ignoreHref"><span class="icon fa-envelope">Contact</span></a></li>
+        </ul>
+      </nav>
+
+  </div>
+
+  <div class="bottom">
+
+    <!-- Social Icons -->
+      <ul class="icons">
+        <li><a href="https://www.facebook.com/vitthehindueplusclub/" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
+        <li><a href="mailto:thehindueplusclub@gmail.com" class="icon fa-envelope"><span class="label">Email</span></a></li>
+      </ul>
+
+  </div>
+
+</div>
+
+<!-- particles.js container -->
+<div id="particles-js">
+  <a href="index.html">Enter</a>
+</div>
+
+<!-- scripts -->
+<script src="particles.js"></script>
+<script src="assets/js/app.js"></script>
+
+<!-- stats.js -->
+<script src="assets/js/lib/stats.js"></script>
+<script>
+  var count_particles, stats, update;
+  stats = new Stats;
+  stats.setMode(0);
+  stats.domElement.style.position = 'absolute';
+  stats.domElement.style.left = '0px';
+  stats.domElement.style.top = '0px';
+  document.body.appendChild(stats.domElement);
+  count_particles = document.querySelector('.js-count-particles');
+  update = function() {
+    stats.begin();
+    stats.end();
+    if (window.pJSDom[0].pJS.particles && window.pJSDom[0].pJS.particles.array) {
+      count_particles.innerText = window.pJSDom[0].pJS.particles.array.length;
+    }
+    requestAnimationFrame(update);
+  };
+  requestAnimationFrame(update);
+</script>
+<!-- Footer -->
+  <div id="footer">
+
+    <!-- Copyright -->
+      <ul class="copyright">
+        <li>&copy; The Hindu Education Plus Club. All rights reserved.</li><li>Designed with <i class="fa fa-heart"></i> by <a href="http://booleanbalaji.in"> Abhishek Balaji </a> with loads of help from : <a href="http://html5up.net">HTML5 UP</a></li>
+      </ul>
+
+  </div>
+
+</body>
+</html>
